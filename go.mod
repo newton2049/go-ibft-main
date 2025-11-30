@@ -1,13 +1,13 @@
 module github.com/newton2049/go-ibft-main
 
-go 1.19
+go 1.23
 
 require (
 	github.com/golang/protobuf v1.5.0
 	github.com/google/uuid v1.3.0
 	github.com/stretchr/testify v1.8.1
 	go.uber.org/goleak v1.2.0
-	google.golang.org/protobuf v1.28.1
+	google.golang.org/protobuf v1.36.10
 	pgregory.net/rapid v0.5.3
 )
 
