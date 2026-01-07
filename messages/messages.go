@@ -3,7 +3,7 @@ package messages
 import (
 	"sync"
 
-	"github.com/newton2049/go-ibft-main/messages/proto"
+	"github.com/newton2049/go-ibft/messages/proto"
 )
 
 // Messages contains the relevant messages for each view (height, round)
@@ -23,17 +23,7 @@ type Messages struct {
 
 // Subscribe creates a new message type subscription
 func (ms *Messages) Subscribe(details SubscriptionDetails) *Subscription {
-	// Create the subscription
-	subscription := ms.eventManager.subscribe(details)
-
-	// Check if any condition is already met
-	msgs := ms.GetValidMessages(details.View, details.MessageType, func(_ *proto.Message) bool { return true })
-
-	if details.HasQuorumFn(details.View.Height, msgs, details.MessageType) {
-		ms.eventManager.signalEvent(details.MessageType, details.View)
-	}
-
-	return subscription
+	return ms.eventManager.subscribe(details)
 }
 
 // Unsubscribe cancels a message type subscription
@@ -75,14 +65,10 @@ func (ms *Messages) AddMessage(message *proto.Message) {
 }
 
 // SignalEvent signals event
-func (ms *Messages) SignalEvent(message *proto.Message) {
-	ms.eventManager.signalEvent(
-		message.Type,
-		&proto.View{
-			Height: message.View.Height,
-			Round:  message.View.Round,
-		},
-	)
+func (ms *Messages) SignalEvent(messageType proto.MessageType, view *proto.View) {
+	ms.eventManager.signalEvent(messageType, &proto.View{
+		Height: view.Height,
+		Round:  view.Round})
 }
 
 // Close closes event manager

@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/goleak"
 
-	"github.com/newton2049/go-ibft-main/messages/proto"
+	"github.com/newton2049/go-ibft/messages/proto"
 )
 
 // generateRandomMessages generates random messages for the
@@ -391,9 +391,6 @@ func TestMessages_EventManager(t *testing.T) {
 	subscription := messages.Subscribe(SubscriptionDetails{
 		MessageType: messageType,
 		View:        baseView,
-		HasQuorumFn: func(_ uint64, messages []*proto.Message, _ proto.MessageType) bool {
-			return len(messages) >= numMessages
-		},
 	})
 
 	defer messages.Unsubscribe(subscription.ID)
@@ -402,7 +399,7 @@ func TestMessages_EventManager(t *testing.T) {
 	randomMessages := generateRandomMessages(numMessages, baseView, messageType)
 	for _, message := range randomMessages {
 		messages.AddMessage(message)
-		messages.SignalEvent(message)
+		messages.SignalEvent(message.Type, message.View)
 	}
 
 	// Wait for the subscription event to happen

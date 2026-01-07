@@ -7,7 +7,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/newton2049/go-ibft-main/messages/proto"
+	"github.com/newton2049/go-ibft/messages/proto"
 )
 
 type eventManager struct {
@@ -55,9 +55,6 @@ type SubscriptionDetails struct {
 	// HasMinRound is the flag indicating if the
 	// round number is a lower bound
 	HasMinRound bool
-
-	// HasQuorumFn is the function used to check for quorum existence
-	HasQuorumFn func(height uint64, messages []*proto.Message, msgType proto.MessageType) bool
 }
 
 // subscribe registers a new listener for message events

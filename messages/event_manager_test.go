@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/newton2049/go-ibft-main/messages/proto"
+	"github.com/newton2049/go-ibft/messages/proto"
 )
 
 func TestEventManager_SubscribeCancel(t *testing.T) {
