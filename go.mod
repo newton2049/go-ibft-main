@@ -1,4 +1,4 @@
-module github.com/newton2049/go-ibft
+module github.com/newton2049/go-ibft-main
 
 go 1.19
 
