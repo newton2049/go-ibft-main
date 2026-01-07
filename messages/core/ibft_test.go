@@ -12,8 +12,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/newton2049/go-ibft/messages"
-	"github.com/newton2049/go-ibft/messages/proto"
+	"github.com/newton2049/go-ibft-main/messages"
+	"github.com/newton2049/go-ibft-main/messages/proto"
 )
 
 func proposalMatches(proposal *proto.Proposal, message *proto.Message) bool {

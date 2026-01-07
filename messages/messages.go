@@ -3,7 +3,7 @@ package messages
 import (
 	"sync"
 
-	"github.com/newton2049/go-ibft/messages/proto"
+	"github.com/newton2049/go-ibft-main/messages/proto"
 )
 
 // Messages contains the relevant messages for each view (height, round)

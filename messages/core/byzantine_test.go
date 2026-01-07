@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/newton2049/go-ibft/messages/proto"
+	"github.com/newton2049/go-ibft-main/messages/proto"
 
 	"github.com/stretchr/testify/assert"
 )

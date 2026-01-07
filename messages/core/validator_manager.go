@@ -6,7 +6,7 @@ import (
 	"math/big"
 	"sync"
 
-	"github.com/newton2049/go-ibft/messages/proto"
+	"github.com/newton2049/go-ibft-main/messages/proto"
 )
 
 var (

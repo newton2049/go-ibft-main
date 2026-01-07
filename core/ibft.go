@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/newton2049/go-ibft/messages"
-	"github.com/newton2049/go-ibft/messages/proto"
+	"github.com/newton2049/go-ibft-main/messages"
+	"github.com/newton2049/go-ibft-main/messages/proto"
 	"github.com/armon/go-metrics"
 )
 

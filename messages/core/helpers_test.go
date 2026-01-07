@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/newton2049/go-ibft/messages/proto"
+	"github.com/newton2049/go-ibft-main/messages/proto"
 )
 
 /*	HELPERS */

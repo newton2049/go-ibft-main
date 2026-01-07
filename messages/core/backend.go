@@ -3,8 +3,8 @@
 package core
 
 import (
-	"github.com/newton2049/go-ibft/messages"
-	"github.com/newton2049/go-ibft/messages/proto"
+	"github.com/newton2049/go-ibft-main/messages"
+	"github.com/newton2049/go-ibft-main/messages/proto"
 )
 
 // MessageConstructor defines a message constructor interface
